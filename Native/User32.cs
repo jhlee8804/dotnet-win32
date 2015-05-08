@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 using System.Text;
 
@@ -120,7 +121,7 @@ namespace WinFormCustomControls.Native
         [DllImport("user32.dll", EntryPoint = "GetClassLong")]
         public static extern uint GetClassLongPtr32(HandleRef hWnd, int nIndex);
 
-        [DllImport("user32.dll", EntryPoint = "GetClassLongPtr")]
+        [DllImport("user32.dll", EntryPoint = "GetClassLongPtr"), SuppressMessage("Microsoft.Interoperability", "CA1400:PInvokeEntryPointsShouldExist")]
         public static extern IntPtr GetClassLongPtr64(HandleRef hWnd, int nIndex);
 
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
